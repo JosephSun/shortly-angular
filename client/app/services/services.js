@@ -9,9 +9,7 @@ angular.module('shortly.services', [])
           url: '/api/links'
         })
       .then(function successCallback(response) {
-        // console.log("Hello I am here HAHAHAHAH")
-        //   // linkObj.links = response.data;
-        //   console.log("Going through successCallback")
+        console.log("Success Function of addLinks");
         }, function errorCallback(response) {
           console.log('theres an error in the links factory promise http');
         });
