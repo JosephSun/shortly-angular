@@ -13,6 +13,7 @@ describe('Routing', function () {
   });
 
   it('Should have /signin route, template, and controller', function () {
+    console.log("$route.routes[/sign]", $route.routes['/signin']/*, "$route.routes", $route.routes, "route.routes[/signin]", $route.routes['/signin']*/);
     expect($route.routes['/signin']).to.be.ok();
     expect($route.routes['/signin'].controller).to.be('AuthController');
     expect($route.routes['/signin'].templateUrl).to.be('app/auth/signin.html');
