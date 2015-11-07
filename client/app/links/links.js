@@ -6,17 +6,20 @@ angular.module('shortly.links', [])
   console.log("$scope.routes", $scope.routes);
   $scope.getLinks = Links.getLinks;
   $scope.data = Links; 
-  $scope["/links"] = Links.linksRoute; 
+  // $scope["/links"] = Links.linksRoute; 
   $scope.getLinks();
+  $scope.addLinks = function(url) {
+    Links.addLinks(url);
+  }
   
-  $scope.links = function () {
-      Links.linksRoute($scope.user)
-        .then(function (token) {
-          $window.localStorage.setItem('com.shortly', token);
-          $location.path('/links');
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    };
+  // $scope.links = function () {
+  //     Links.linksRoute($scope.user)
+  //       .then(function (token) {
+  //         $window.localStorage.setItem('com.shortly', token);
+  //         $location.path('/links');
+  //       })
+  //       .catch(function (error) {
+  //         console.error(error);
+  //       });
+  //   };
 });

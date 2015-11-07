@@ -2,15 +2,22 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   var linkObj = {};
-
-    linkObj.addLinks = function() {
+  var urlLinks = []
+    linkObj.addLinks = function(url) {
+      console.log('This is url',url);
       return $http({
           method: 'POST',
-          url: '/api/links'
+          url: 'app/shorten/shorten.html'
         })
       .then(function successCallback(response) {
+        // console.log('url', url, '********************************response', response);
+        // urlLinks.push(url);
         console.log("Success Function of addLinks");
         }, function errorCallback(response) {
+          // console.log(Object.keys(response))
+          console.log(response.status);
+          // console.error(err);
+          // console.log('response', response);
           console.log('theres an error in the links factory promise http');
         });
     };
