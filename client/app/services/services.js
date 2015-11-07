@@ -2,6 +2,20 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   var linkObj = {};
+
+    linkObj.addLinks = function() {
+      return $http({
+          method: 'POST',
+          url: '/api/links'
+        })
+      .then(function successCallback(response) {
+        // console.log("Hello I am here HAHAHAHAH")
+        //   // linkObj.links = response.data;
+        //   console.log("Going through successCallback")
+        }, function errorCallback(response) {
+          console.log('theres an error in the links factory promise http');
+        });
+    };
     linkObj.getLinks = function() {
     return $http({
         method: 'GET',
